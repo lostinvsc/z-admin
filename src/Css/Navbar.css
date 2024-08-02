@@ -1,0 +1,97 @@
+#nav{
+    padding:6px 50px;
+    width:100%;
+    margin: auto;
+}
+#logo{
+    width:150px;
+}
+.menu{
+    display: none;
+}
+
+.logintext{
+    color: white;
+    background-color: black;
+    border-radius:100px ;
+    height:fit-content;
+}
+#cpart{
+    width:300px;
+}
+#cpart li{
+   font-weight: 500;
+}
+@media (max-width:1000px) {
+    #nav{
+        padding:6px 20px;
+
+    }
+}
+@media (max-width:740px) {
+  div .hide{
+    display: none;
+   }
+   #logintext{
+    font-size:13px;
+   }
+   .menu{
+    display: block;
+   }
+   #cpart{
+flex-direction: column;
+position: absolute;
+top:80px;
+left: 0vw;
+align-items: end;
+width: 100vw;
+gap:10px;
+padding: 0px 20px;
+   }
+   
+}
+@media (max-width:450px) {
+   #logintext{
+
+    transform: translate(-5vw,0);
+   }
+}
+
+@media (max-width:450px) {
+
+
+   .hide2{
+display: none;
+   }
+
+   #logintext div,   #logintext span{
+
+    position: absolute;
+    top:45px;
+    left: -58vw;
+    align-items: start;
+    font-size: 14px;
+    font-weight: 300;
+    gap:10px;
+    color: white;
+    background-color: black;
+    border-radius:100px ;
+    padding: 5px 10px;
+   }
+}
+
+@media (max-width:312px){
+
+    #logintext div{
+    flex-direction: column;
+    top:155px;
+    left: -18vw;
+    width: 46vw;
+    background-color: transparent;
+    color:black;
+    padding:0px;
+    align-items: end;
+    font-weight: 600;
+   }
+
+}

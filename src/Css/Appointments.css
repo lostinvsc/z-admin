@@ -1,0 +1,107 @@
+#appheading {
+    max-width: 1380px;
+    width: calc(100vw - 120px);
+    margin: auto;
+}
+.container2{
+    display: none;
+}
+.container {
+    max-width: 1380px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width:100%;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+tr:hover {
+    background-color: #f1f1f1;
+}
+.remove {
+    color: #ff4d4d;
+    text-decoration: none;
+}
+.remove:hover {
+    text-decoration: underline;
+}
+.header {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+@media (max-width:1200px) {
+    #appheading {
+    
+        width: calc(100vw - 50px);
+      
+    }
+
+}
+@media (max-width:772px) {
+    .container{
+        /* background-color: transparent; */
+        padding: 10px;
+    }
+    .container2 {
+        display: block;
+        max-width: 600px;
+        margin: 0 auto;
+        /* background-color: #ffffff; */
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+    .header {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    .field {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+    }
+    .field label {
+        font-weight: bold;
+        color: #333333;
+    }
+    .field span {
+        color: #666666;
+        flex-grow: 1;
+        text-align: end;
+    }
+    .remove {
+        display: block;
+        text-align: right;
+        margin-top: 20px;
+        text-decoration: none;
+        color: #ff4d4d;
+    }
+    .remove:hover {
+        text-decoration: underline;
+    }
+   
+    .hide11 , #hide{
+        display: none;
+    }
+    #appheading {
+        width:calc(100vw - 10px)
+    }
+
+}
