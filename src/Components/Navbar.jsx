@@ -23,11 +23,9 @@ const Navbar = (props) => {
                 value.setCookie(Cookies.get("adminToken"))
             } else {
                 toast.error(res.data.message)
-
             }
         }
     }
-
 
     return (
 
