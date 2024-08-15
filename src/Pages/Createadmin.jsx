@@ -20,7 +20,7 @@ const Createadmin = ({margin}) => {
     } = useForm()
     const onSubmit = async (data) => {
 
-        let res = await axios.post('https://z-care.onrender.com/createadmin', data, {
+        let res = await axios.post('https://z-back-1.onrender.com/createadmin', data, {
             withCredentials: true,
         })
         let message = res.data.message;

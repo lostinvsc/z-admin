@@ -9,7 +9,7 @@ const Messages = ({ margin }) => {
     let value = useContext(Context)
     const [messages, setMessages] = useState([])
     const getmessages = async () => {
-        let res = await axios.get('https://z-care.onrender.com/getmessages', {
+        let res = await axios.get('https://z-back-1.onrender.com/getmessages', {
             withCredentials: true,
         })
         setMessages(res.data.reverse())
@@ -20,7 +20,7 @@ const Messages = ({ margin }) => {
 
     const removemessage = async (id) => {
         let data = { id: id }
-        let res = await axios.put('https://z-care.onrender.com/removemessage', data, {
+        let res = await axios.put('https://z-back-1.onrender.com/removemessage', data, {
             withCredentials: true,
         })
         setMessages(res.data)

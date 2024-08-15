@@ -9,7 +9,7 @@ const Appointments = ({ margin }) => {
     let value = useContext(Context)
     const [appointments, setAppointments] = useState([])
     const getappointments = async () => {
-        let res = await axios.get('https://z-care.onrender.com/getappointments', {
+        let res = await axios.get('https://z-back-1.onrender.com/getappointments', {
             withCredentials: true,
         })
         setAppointments(res.data)
@@ -21,7 +21,7 @@ const Appointments = ({ margin }) => {
 
     const remove = async (id) => {
         let data = { id: id }
-        let res = await axios.put("https://z-care.onrender.com/removeappointment", data, {
+        let res = await axios.put("https://z-back-1.onrender.com/removeappointment", data, {
             withCredentials: true,
         })
 

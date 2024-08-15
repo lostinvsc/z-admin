@@ -69,7 +69,7 @@ const Update = ({ margin }) => {
             url: url,
             name: name,
         }
-        let res = await axios.post('https://z-care.onrender.com/addservice', data, {
+        let res = await axios.post('https://z-back-1.onrender.com/addservice', data, {
             withCredentials: true,
         });
         if (res.data.status) {
@@ -85,7 +85,7 @@ const Update = ({ margin }) => {
 
 
     const getservice = async () => {
-        let res = await axios.get("https://z-care.onrender.com/getadminservice", {
+        let res = await axios.get("https://z-back-1.onrender.com/getadminservice", {
             withCredentials: true,
         })
         setService(res.data)
@@ -99,7 +99,7 @@ const Update = ({ margin }) => {
 
     const remove = async (id) => {
         let data = { id: id }
-        let res = await axios.put("https://z-care.onrender.com/removeservice", data, {
+        let res = await axios.put("https://z-back-1.onrender.com/removeservice", data, {
             withCredentials: true,
         })
         getservice()

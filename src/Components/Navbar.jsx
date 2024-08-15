@@ -14,7 +14,7 @@ const Navbar = (props) => {
     async function logout() {
         let con = confirm("Are you sure you want to logout")
         if (con) {
-            let res = await axios.get('https://z-care.onrender.com/adminlogout', {
+            let res = await axios.get('https://z-back-1.onrender.com/adminlogout', {
                 withCredentials: true,
             })
 
