@@ -32,7 +32,7 @@ const Appointments = ({ margin }) => {
             toast.error(res.data.message)
         }
     }
-    console.log(margin)
+
     return (
 
         <div id='appheading' style={{ marginTop: margin }} className={`pt-[100px]`}>

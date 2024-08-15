@@ -25,7 +25,7 @@ const Login = ({margin}) => {
             })
             let message = res.data.message ; 
             let status = res.data.status ; 
-            console.log(status,message)
+           
             setStatus(status)
             if(status){
                 navigate('/')

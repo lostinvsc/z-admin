@@ -22,8 +22,6 @@ const Update = ({ margin }) => {
 
     const onSubmit = async (sdata) => {
 
-        console.log(sdata)
-
         if (file) {
 
             const data = new FormData();
