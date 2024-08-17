@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react'
-import Context from '../Context/Context'
+
 import axios from 'axios'
 import '../Css/Appointments.css'
 import { ToastContainer, toast } from 'react-toastify';
@@ -8,7 +8,7 @@ import '../Css/update.css'
 
 import { useForm } from 'react-hook-form';
 const Update = ({ margin }) => {
-    let value = useContext(Context)
+
     const [image, setImage] = useState()
     const [file, setFile] = useState()
 
@@ -67,7 +67,7 @@ const Update = ({ margin }) => {
             url: url,
             name: name,
         }
-        let res = await axios.post('https://z-back-1.onrender.com/addservice', data, {
+        let res = await axios.post('https://z-backend-is6p.onrender.com/addservice', data, {
             withCredentials: true,
         });
         if (res.data.status) {
@@ -83,7 +83,7 @@ const Update = ({ margin }) => {
 
 
     const getservice = async () => {
-        let res = await axios.get("https://z-back-1.onrender.com/getadminservice", {
+        let res = await axios.get("https://z-backend-is6p.onrender.com/getadminservice", {
             withCredentials: true,
         })
         setService(res.data)
@@ -97,7 +97,7 @@ const Update = ({ margin }) => {
 
     const remove = async (id) => {
         let data = { id: id }
-        let res = await axios.put("https://z-back-1.onrender.com/removeservice", data, {
+        let res = await axios.put("https://z-backend-is6p.onrender.com/removeservice", data, {
             withCredentials: true,
         })
         getservice()
@@ -113,7 +113,7 @@ const Update = ({ margin }) => {
     return (
         <div id='update' style={{ marginTop: margin }} className='pt-[100px] '>
 
-            {value.cookie &&
+            {
                 <div className='w-fit mx-auto px-[20px] border border-gray-400 rounded-lg py-[10px] bg-white'>
                     <form onSubmit={handleSubmit(onSubmit)} className='flex w-fit flex-wrap mx-auto items-center gap-[30px]'>
                         <div className='fill border border-gray-400 rounded-lg p-[10px]'>
@@ -125,7 +125,7 @@ const Update = ({ margin }) => {
                     </form>
                 </div>
             }
-            {value.cookie &&
+            {
                 <div className="container mt-[40px]">
                     <div className="header hide11">Update</div>
                     <table>

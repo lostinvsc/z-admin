@@ -1,18 +1,18 @@
 import React, { useState, useEffect, useContext } from 'react'
-import Context from '../Context/Context'
+
 import axios from 'axios'
 import '../Css/Appointments.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../Css/Appointments.css'
 const Messages = ({ margin }) => {
-    let value = useContext(Context)
+
     const [messages, setMessages] = useState([])
     const getmessages = async () => {
-        let res = await axios.get('https://z-back-1.onrender.com/getmessages', {
+        let res = await axios.get('https://z-backend-is6p.onrender.com/getmessages', {
             withCredentials: true,
         })
-        setMessages(res.data.reverse())
+        setMessages(res.data)
     }
     useEffect(() => {
         getmessages()
@@ -20,7 +20,7 @@ const Messages = ({ margin }) => {
 
     const removemessage = async (id) => {
         let data = { id: id }
-        let res = await axios.put('https://z-back-1.onrender.com/removemessage', data, {
+        let res = await axios.put('https://z-backend-is6p.onrender.com/removemessage', data, {
             withCredentials: true,
         })
         setMessages(res.data)
@@ -30,7 +30,7 @@ const Messages = ({ margin }) => {
     return (
         <div id='appheading' style={{ marginTop: margin }} className={`pt-[100px]`}>
             {
-                value.cookie &&
+    
 
                 <div className="container">
                     <div className="header hide11">Messages Information</div>

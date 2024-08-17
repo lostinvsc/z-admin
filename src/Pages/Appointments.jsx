@@ -1,15 +1,15 @@
 import React, { useState, useEffect, useContext } from 'react'
-import Context from '../Context/Context'
+
 import axios from 'axios'
 import '../Css/Appointments.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../Css/Appointments.css'
 const Appointments = ({ margin }) => {
-    let value = useContext(Context)
+
     const [appointments, setAppointments] = useState([])
     const getappointments = async () => {
-        let res = await axios.get('https://z-back-1.onrender.com/getappointments', {
+        let res = await axios.get('https://z-backend-is6p.onrender.com/getappointments', {
             withCredentials: true,
         })
         setAppointments(res.data)
@@ -21,15 +21,18 @@ const Appointments = ({ margin }) => {
 
     const remove = async (id) => {
         let data = { id: id }
-        let res = await axios.put("https://z-back-1.onrender.com/removeappointment", data, {
-            withCredentials: true,
-        })
-
-        if (res.data.status) {
-            toast.success(res.data.message)
-            getappointments()
-        } else {
-            toast.error(res.data.message)
+        let c=confirm("Confirm to remove this appointment")
+        if(c){
+            let res = await axios.put("https://z-backend-is6p.onrender.com/removeappointment", data, {
+                withCredentials: true,
+            })
+            
+            if (res.data.status) {
+                toast.success(res.data.message)
+                getappointments()
+            } else {
+                toast.error(res.data.message)
+            }
         }
     }
 
@@ -37,7 +40,7 @@ const Appointments = ({ margin }) => {
 
         <div id='appheading' style={{ marginTop: margin }} className={`pt-[100px]`}>
             {
-                value.cookie &&
+            
 
                 <div className="container">
                     <div className="header hide11">Appointments Information</div>
